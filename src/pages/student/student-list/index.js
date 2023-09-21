@@ -1,5 +1,5 @@
 import { Badge } from "@mantine/core";
-import TableCRUD from "../../../components/tables/mrt/TableCrud";
+import AdvancedTableCrud from "../../../components/tables/mrt/AdvancedTableCrud";
 import { useMemo } from "react";
 import { useDeleteStudentMutation, useGetStudents } from "api/hooks/user-hook";
 
@@ -69,11 +69,11 @@ function StudentList () {
   );
   return (
     <>
-      <TableCRUD
+      <AdvancedTableCrud
         columns={columns}
         useGetItems={useGetStudents}
         deleteMutate={useDeleteStudentMutation}
-        dataName="users"
+        dataName="students"
       />
     </>
   );

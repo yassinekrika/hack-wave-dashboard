@@ -11,7 +11,7 @@ class UserService {
     return instance.get(`/dashboard/v1/user/${userId}`);
   }
 
-  deletStudent(userId) {
+  deleteStudent(userId) {
     return instance.delete(`/dashboard/v1/user/${userId}`);
   }
 
