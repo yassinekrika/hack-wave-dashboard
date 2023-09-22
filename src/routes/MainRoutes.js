@@ -7,6 +7,7 @@ import UserPage from 'pages/student/index';
 import AntIcons from 'pages/components-overview/AntIcons';
 import {Navigate} from 'react-router-dom'
 import StudentList from 'pages/student/student-list/index';
+import AddStudent from 'pages/student/add-student/index';
 
 // ==============================|| MAIN ROUTING ||============================== //
 const MainRoutes = (logged) => ({
@@ -45,6 +46,10 @@ const MainRoutes = (logged) => ({
         {
           path: 'student',
           element: <StudentList />
+        },
+        {
+          path: 'add-student',
+          element: <AddStudent />
         }
       ]
 });

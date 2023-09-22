@@ -17,6 +17,13 @@ const student = {
             type: "item",
             url: "/student",
             icon: icons.UserOutlined
+        },
+        {
+            id: "add-users",
+            title: "Add Student",
+            type: "item",
+            url: "/add-student",
+            icon: icons.UserAddOutlined
         }
     ]
 }

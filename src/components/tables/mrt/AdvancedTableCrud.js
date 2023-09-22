@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Box } from '@mantine/core';
+import { ASSETS_URL } from "constants/api";
 import {
     MantineReactTable,
     useMantineReactTable
@@ -49,67 +51,6 @@ function AdvancedTableCrud({
   const fetchedElements = data?.data[dataName]?.data ?? [];
   const totalRowCount = data?.data[dataName]?.total ?? 0;
 
-  // let shops = data?.data?.shops || [];
-
-  // const columns = useMemo<MRT_ColumnDef<Shop>[]>(
-  //   () => [
-  //     {
-  //       accessorKey: "id",
-  //       header: "Id",
-  //       enableEditing: false,
-  //       size: 50,
-  //     },
-  //     {
-  //       accessorKey: "name",
-  //       header: "Shop Name",
-  //     },
-  //     {
-  //       accessorKey: "address",
-  //       header: "Address",
-  //     },
-  //     {
-  //       accessorKey: "active",
-  //       header: "Active",
-  //       size: 50,
-  //       Cell: ({ renderedCellValue, row }) => {
-  //         return (
-  //           <>
-  //             {renderedCellValue ? (
-  //               <Badge
-  //                 color="cyan"
-  //                 size="lg"
-  //                 variant="dot"
-  //                 radius="md"
-  //                 sx={{ fontSize: 12 }}
-  //               >
-  //                 Active
-  //               </Badge>
-  //             ) : (
-  //               <Badge
-  //                 color="red"
-  //                 size="lg"
-  //                 variant="dot"
-  //                 radius="md"
-  //                 sx={{ fontSize: 12 }}
-  //               >
-  //                 Not Active
-  //               </Badge>
-  //             )}
-  //           </>
-  //         );
-  //       },
-  //     },
-  //     {
-  //       // accessorKey: "created_at",
-  //       accessorFn: ({ created_at }) => (
-  //         <>{dayjs(created_at).format("DD MMM YYYY")}</>
-  //       ),
-  //       header: "Date Of Creation",
-  //       enableEditing: false,
-  //     },
-  //   ],
-  //   []
-  // );
 
   const mutation = deleteMutate();
 
@@ -213,7 +154,27 @@ function AdvancedTableCrud({
 
     renderDetailPanel: ({row}) => {
         return (
-            <h1>{row.original.first_name}</h1>
+            <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'flex-start',
+          gap: '16px',
+          padding: '16px',
+        }}
+      >
+        <img
+          alt="avatar"
+          height={200}
+          width={200}
+          src={ASSETS_URL + row.original.image.name}
+
+          style={{ borderRadius: '50%' }}
+        />
+        <Box sx={{ textAlign: 'center' }}>
+          <Text>First Name: {row.original.user.first_name}</Text>
+          <Text>Lasst Name: {row.original.user.last_name}</Text>
+        </Box>
+      </Box>
         )
     },
 

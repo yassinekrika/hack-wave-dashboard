@@ -16,7 +16,7 @@ class UserService {
   }
 
   creatStudent(user) {
-    return instance.post(`/dashboard/v1/user`, user);
+    return instance.post(`/dashboard/v1/user/student`, user);
   }
 }
 

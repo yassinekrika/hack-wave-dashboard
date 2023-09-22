@@ -7,33 +7,30 @@ function StudentList () {
   const columns = useMemo(
     () => [
       {
-        accessorKey: "id",
+        accessorKey: "user.id",
         header: "Id",
         enableEditing: false,
         size: 50,
       },
       {
-        accessorKey: "username",
+        accessorKey: "user.username",
         header: "User Name",
       },
       {
-        accessorKey: "phone_number",
+        accessorKey: "user.phone_number",
         header: "Phone number",
       },
       {
-        accessorKey: "email",
+        accessorKey: "user.email",
         header: "Email",
       },
       {
-        accessorKey: "city",
+        accessorKey: "user.city.name",
         header: "City",
         enableEditing: false,
-        accessorFn: ({ city }) => (
-          <>{city?.name}</>
-        ),
       },
       {
-        accessorKey: "active",
+        accessorKey: "user.active",
         header: "Active",
         size: 50,
         Cell: ({ renderedCellValue }) => {
