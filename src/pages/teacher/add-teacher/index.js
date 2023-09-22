@@ -27,10 +27,9 @@ import { roles } from "constants/roles";
 import { useFormik } from "formik";
 import { useCreateUser } from "api/hooks/user-hook";
 import { useDisclosure } from "@mantine/hooks";
-import DropZone from "components/DropZone/DropZone";
 
 
-export function AddStudent() {
+export function AddTeacher() {
   const [visible, { toggle }] = useDisclosure(false);
 
   const { data: towns } = useGetTowns();
@@ -64,7 +63,7 @@ export function AddStudent() {
       email: "",
       phone_number: "",
       active: "1",
-      role_id: "2",
+      role_id: "4",
       image_id: null
     },
     onSubmit: async (values) => {
@@ -113,13 +112,6 @@ export function AddStudent() {
               <MainCard>
                 <Text pb={2}>User Info</Text>
                 <Stack spacing={20}>
-                <Input.Wrapper>
-                    <DropZone
-                        onAllUploaded={onAllUploaded}
-                        setIsUploading={setIsUploading}
-                        isMultiple={false}
-                    />
-                </Input.Wrapper>  
                   <Input.Wrapper label="User">
                     <Box pt="10px">
                       <Input
@@ -390,8 +382,8 @@ export function AddStudent() {
                   </Input.Wrapper>
                   <Input.Wrapper label="User role">
                     <Select
-                      // label="Avtive"
                       disabled
+                      // label="Avtive"
                       pt={10}
                       placeholder="Pick one"
                       onChange={(value) =>
@@ -430,4 +422,4 @@ export function AddStudent() {
   );
 }
 
-export default AddStudent;
+export default AddTeacher;

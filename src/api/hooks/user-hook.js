@@ -1,16 +1,16 @@
 import userService from "api/services/user-service";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 
-const useGetStudents = (params) => {
+const useGetUsers = (params) => {
   return useQuery({
     keepPreviousData: true, //useful for paginated queries by keeping data from previous pages on screen while fetching the next page
     staleTime: 30_000, //don't refetch previously viewed pages until cache is more than 30 seconds old
     queryKey: ["users"],
-    queryFn: () => userService.getStudents(params),
+    queryFn: () => userService.getUsers(params),
   });
 };
 
-function useDeleteStudentMutation() {
+function useDeleteUserMutation() {
   const queryClient = useQueryClient();
 
   return useMutation({
@@ -23,11 +23,11 @@ function useDeleteStudentMutation() {
   });
 }
 
-const useCreateStudent = () => {
+const useCreateUser = () => {
   const queryClient = useQueryClient();
   return useMutation(
     (user) => {
-      return userService.creatStudent(user);
+      return userService.creatUser(user);
     },
     {
       onSuccess: () => {
@@ -37,4 +37,4 @@ const useCreateStudent = () => {
   );
 };
 
-export { useCreateStudent, useGetStudents, useDeleteStudentMutation };
+export { useCreateUser, useGetUsers, useDeleteUserMutation };

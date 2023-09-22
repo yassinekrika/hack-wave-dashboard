@@ -8,6 +8,9 @@ import AntIcons from 'pages/components-overview/AntIcons';
 import {Navigate} from 'react-router-dom'
 import StudentList from 'pages/student/student-list/index';
 import AddStudent from 'pages/student/add-student/index';
+import TeacherList from 'pages/teacher/teacher-list/index';
+import AddTeacher from 'pages/teacher/add-teacher/index';
+import TimeTable from 'pages/time-table/index';
 
 // ==============================|| MAIN ROUTING ||============================== //
 const MainRoutes = (logged) => ({
@@ -50,6 +53,18 @@ const MainRoutes = (logged) => ({
         {
           path: 'add-student',
           element: <AddStudent />
+        },
+        {
+          path: 'teacher',
+          element: <TeacherList />
+        },
+        {
+          path: 'add-teacher',
+          element: <AddTeacher />
+        },
+        {
+          path: 'time-table',
+          element: <TimeTable />
         }
       ]
 });

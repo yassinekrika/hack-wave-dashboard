@@ -24,6 +24,7 @@ function AdvancedTableCrud({
   columns,
   deleteMutate,
   dataName,
+  queryParams,
   ...otherProps
 }) {
   // const [globalFilter, setGlobalFilter] = useState("");
@@ -42,6 +43,7 @@ function AdvancedTableCrud({
     page: pagination.pageIndex + 1,
     sort_by: sorting[0]?.id,
     ascending: !sorting[0]?.desc,
+    ...queryParams
   });
   useEffect(() => {
     refetch();

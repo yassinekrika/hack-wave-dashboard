@@ -22,6 +22,7 @@ function TableCRUD({
   columns,
   deleteMutate,
   dataName,
+  queryParams,
   ...otherProps
 }) {
   // const [globalFilter, setGlobalFilter] = useState("");
@@ -40,6 +41,7 @@ function TableCRUD({
     page: pagination.pageIndex + 1,
     sort_by: sorting[0]?.id,
     ascending: !sorting[0]?.desc,
+    ...queryParams
   });
   useEffect(() => {
     refetch();
@@ -49,67 +51,7 @@ function TableCRUD({
   const fetchedElements = data?.data[dataName]?.data ?? [];
   const totalRowCount = data?.data[dataName]?.total ?? 0;
 
-  // let shops = data?.data?.shops || [];
-
-  // const columns = useMemo<MRT_ColumnDef<Shop>[]>(
-  //   () => [
-  //     {
-  //       accessorKey: "id",
-  //       header: "Id",
-  //       enableEditing: false,
-  //       size: 50,
-  //     },
-  //     {
-  //       accessorKey: "name",
-  //       header: "Shop Name",
-  //     },
-  //     {
-  //       accessorKey: "address",
-  //       header: "Address",
-  //     },
-  //     {
-  //       accessorKey: "active",
-  //       header: "Active",
-  //       size: 50,
-  //       Cell: ({ renderedCellValue, row }) => {
-  //         return (
-  //           <>
-  //             {renderedCellValue ? (
-  //               <Badge
-  //                 color="cyan"
-  //                 size="lg"
-  //                 variant="dot"
-  //                 radius="md"
-  //                 sx={{ fontSize: 12 }}
-  //               >
-  //                 Active
-  //               </Badge>
-  //             ) : (
-  //               <Badge
-  //                 color="red"
-  //                 size="lg"
-  //                 variant="dot"
-  //                 radius="md"
-  //                 sx={{ fontSize: 12 }}
-  //               >
-  //                 Not Active
-  //               </Badge>
-  //             )}
-  //           </>
-  //         );
-  //       },
-  //     },
-  //     {
-  //       // accessorKey: "created_at",
-  //       accessorFn: ({ created_at }) => (
-  //         <>{dayjs(created_at).format("DD MMM YYYY")}</>
-  //       ),
-  //       header: "Date Of Creation",
-  //       enableEditing: false,
-  //     },
-  //   ],
-  //   []
-  // );
+  
 
   const mutation = deleteMutate();
 

@@ -2,8 +2,9 @@ import { Badge } from "@mantine/core";
 import AdvancedTableCrud from "../../../components/tables/mrt/AdvancedTableCrud";
 import { useMemo } from "react";
 import { useDeleteUserMutation, useGetUsers } from "api/hooks/user-hook";
+import TableCRUD from "components/tables/mrt/TableCrud";
 
-function StudentList () {
+function TeacherList () {
   const columns = useMemo(
     () => [
       {
@@ -66,15 +67,15 @@ function StudentList () {
   );
   return (
     <>
-      <AdvancedTableCrud
+      <TableCRUD
         columns={columns}
         useGetItems={useGetUsers}
         deleteMutate={useDeleteUserMutation}
         dataName="users"
-        queryParams={{role_id: 2}}
+        queryParams={{role_id: 4}}
       />
     </>
   );
 }
 
-export default StudentList;
+export default TeacherList;

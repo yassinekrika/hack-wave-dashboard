@@ -1,22 +1,22 @@
 import instance from "services/api";
 
 class UserService {
-  getStudents(params) {
-    return instance.get("/dashboard/v1/user/students", {
+  getUsers(params) {
+    return instance.get("/dashboard/v1/user", {
       params,
     });
   }
 
-  getStudent(userId) {
+  getUser(userId) {
     return instance.get(`/dashboard/v1/user/${userId}`);
   }
 
-  deleteStudent(userId) {
+  deleteUser(userId) {
     return instance.delete(`/dashboard/v1/user/${userId}`);
   }
 
-  creatStudent(user) {
-    return instance.post(`/dashboard/v1/user/student`, user);
+  creatUser(user) {
+    return instance.post(`/dashboard/v1/user`, user);
   }
 }
 
