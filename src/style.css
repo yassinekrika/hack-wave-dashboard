@@ -1,0 +1,42 @@
+/* * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+.paper {
+    padding: 5px 20px;
+    border-radius: 8px;
+    border: 1px solid #e6ebf1;
+    box-shadow: none;
+}
+.paper.clicked {
+    background-color: #e6f7ff;
+    border-right: 2px solid #1890ff;
+    color: #1890ff;
+}
+.paper p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.email-box-detail{
+    padding: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border-right: 2px solid #1890ff;
+    box-shadow: none;
+}
+.email-box-detail p {
+    padding: 0px;
+}
+.email-subject {
+    font-size: 24px;
+    font-weight: 800;
+}
+.email-sender {
+    color: cadetblue;
+}
+.email-date {
+    color: cadetblue;
+}

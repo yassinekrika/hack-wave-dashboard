@@ -4,6 +4,8 @@ import ThemeCustomization from 'themes';
 import ScrollTop from 'components/ScrollTop';
 import { QueryClient, QueryClientProvider } from "react-query";
 
+import './style.css'
+
 
 // ==============================|| APP - THEME, ROUTER, LOCAL  ||============================== //
 
