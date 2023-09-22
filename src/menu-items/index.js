@@ -6,13 +6,14 @@ import student from './student';
 import teacher from './teacher'
 import timeTable from './timeTable';
 import communication from './communication';
+import resources from './resources';
 
 
 
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-  items: [dashboard, student, teacher, timeTable, communication,utilities, support]
+  items: [dashboard, student, teacher, timeTable, communication, resources, utilities, support]
 };
 
 export default menuItems;

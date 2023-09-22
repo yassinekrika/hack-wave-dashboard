@@ -153,7 +153,7 @@ import {
     });
   
     return (
-      <div style={{ cursor: !files.length ? "pointer" : "auto" }}>
+      <div style={{ cursor: !files.length ? "pointer" : "auto" }} className="input-file">
         <input
           type={"file"}
           style={{ display: "none" }}
@@ -213,11 +213,10 @@ import {
                 }}
               >
                 <Text size="xl" inline>
-                  Drag images here or click to select files
+                  Upload your're file courses
                 </Text>
                 <Text size="sm" color="dimmed" inline mt={7}>
-                  Attach as many files as you like, each file should not exceed
-                  5mb
+                  should not exced 5mb.
                 </Text>
               </div>
             </div>

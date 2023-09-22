@@ -1,5 +1,4 @@
 import { Badge } from "@mantine/core";
-import AdvancedTableCrud from "../../../components/tables/mrt/AdvancedTableCrud";
 import { useMemo } from "react";
 import { useDeleteUserMutation, useGetUsers } from "api/hooks/user-hook";
 import TableCRUD from "components/tables/mrt/TableCrud";

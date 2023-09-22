@@ -12,6 +12,7 @@ import TeacherList from 'pages/teacher/teacher-list/index';
 import AddTeacher from 'pages/teacher/add-teacher/index';
 import TimeTable from 'pages/time-table/index';
 import Communication from 'pages/communication/index';
+import Resources from 'pages/resources/index';
 
 // ==============================|| MAIN ROUTING ||============================== //
 const MainRoutes = (logged) => ({
@@ -70,6 +71,10 @@ const MainRoutes = (logged) => ({
         {
           path: 'communication',
           element: <Communication />
+        },
+        {
+          path: 'resources',
+          element: <Resources />
         }
       ]
 });
