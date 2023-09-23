@@ -12,17 +12,8 @@ import { useSelector } from 'react-redux';
 
 // ==============================|| MENU ITEMS ||============================== //
 
-const currentUser = JSON.parse(localStorage.getItem('user'));
-let items = [];
-switch(currentUser.role.role) {
-  case 'ADMIN':
-    items = [dashboard, communication, student, teacher, timeTable, resources]
-    break;
-  case 'TEACHER':
-  case 'STUDENT':
-    items = [dashboard, communication, timeTable, resources];
-    break;
-}
+let items = [dashboard, communication, student, teacher, timeTable, resources]
+
 const menuItems = {
   items
 };
