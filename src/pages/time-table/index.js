@@ -24,7 +24,7 @@ const SubjectEditor = ({day, rwIdx})=>{
     return (
         <div>
             {hours.map((hour, index)=>{
-                if(rwIdx != 0) {
+                if(rwIdx !== 0) {
                     return index ? <DayEditor></DayEditor> : <div style={{textAlign: 'center', fontWeight: 'bold'}}>{day}</div>
                 }else{
                     return  index ? <div style={{textAlign: 'center', fontWeight: 'bold',
