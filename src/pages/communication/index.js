@@ -4,176 +4,6 @@ import { Container, Paper, Box } from '../../../node_modules/@mui/material/index
 import TableInlineCRUD from 'components/tables/mrt/TableInlineCrud';
 import { useGetEmails, useDeleteEmailMutation } from 'api/hooks/communication';
 
-const emails = [
-  {
-    id: 1,
-    subject: 'Hello',
-    sender: 'sender@example.com',
-    date: '2023-09-22',
-    body: 'This is the email body...',
-  },
-  {
-    id: 2,
-    subject: 'world',
-    sender: 'hh@gs.com',
-    date: '2023-09-22',
-    body: 'This is the em..',
-  },
-  {
-    id: 4,
-    subject: 'Hello',
-    sender: 'sd@sd.com',
-    date: '2023-09-22',
-    body: 'This is the y...',
-  },
-  {
-    id: 3,
-    subject: 'Hello',
-    sender: 'sender@24.com',
-    date: '2023-09-22',
-    body: 'This is the sdgs...',
-  },
-  {
-    id: 1,
-    subject: 'Hello',
-    sender: 'sender@example.com',
-    date: '2023-09-22',
-    body: 'This is the email body...',
-  },
-  {
-    id: 2,
-    subject: 'world',
-    sender: 'hh@gs.com',
-    date: '2023-09-22',
-    body: 'This is the em..',
-  },
-  {
-    id: 4,
-    subject: 'Hello',
-    sender: 'sd@sd.com',
-    date: '2023-09-22',
-    body: 'This is the y...',
-  },
-  {
-    id: 3,
-    subject: 'Hello',
-    sender: 'sender@24.com',
-    date: '2023-09-22',
-    body: 'This is the sdgs...',
-  },
-  {
-    id: 1,
-    subject: 'Hello',
-    sender: 'sender@example.com',
-    date: '2023-09-22',
-    body: 'This is the email body...',
-  },
-  {
-    id: 2,
-    subject: 'world',
-    sender: 'hh@gs.com',
-    date: '2023-09-22',
-    body: 'This is the em..',
-  },
-  {
-    id: 4,
-    subject: 'Hello',
-    sender: 'sd@sd.com',
-    date: '2023-09-22',
-    body: 'This is the y...',
-  },
-  {
-    id: 3,
-    subject: 'Hello',
-    sender: 'sender@24.com',
-    date: '2023-09-22',
-    body: 'This is the sdgs...',
-  },
-  {
-    id: 1,
-    subject: 'Hello',
-    sender: 'sender@example.com',
-    date: '2023-09-22',
-    body: 'This is the email body...',
-  },
-  {
-    id: 2,
-    subject: 'world',
-    sender: 'hh@gs.com',
-    date: '2023-09-22',
-    body: 'This is the em..',
-  },
-  {
-    id: 4,
-    subject: 'Hello',
-    sender: 'sd@sd.com',
-    date: '2023-09-22',
-    body: 'This is the y...',
-  },
-  {
-    id: 3,
-    subject: 'Hello',
-    sender: 'sender@24.com',
-    date: '2023-09-22',
-    body: 'This is the sdgs...',
-  },
-  {
-    id: 1,
-    subject: 'Hello',
-    sender: 'sender@example.com',
-    date: '2023-09-22',
-    body: 'This is the email body...',
-  },
-  {
-    id: 2,
-    subject: 'world',
-    sender: 'hh@gs.com',
-    date: '2023-09-22',
-    body: 'This is the em..',
-  },
-  {
-    id: 4,
-    subject: 'Hello',
-    sender: 'sd@sd.com',
-    date: '2023-09-22',
-    body: 'This is the y...',
-  },
-  {
-    id: 3,
-    subject: 'Hello',
-    sender: 'sender@24.com',
-    date: '2023-09-22',
-    body: 'This is the sdgs...',
-  },
-  {
-    id: 1,
-    subject: 'Hello',
-    sender: 'sender@example.com',
-    date: '2023-09-22',
-    body: 'This is the email body...',
-  },
-  {
-    id: 2,
-    subject: 'world',
-    sender: 'hh@gs.com',
-    date: '2023-09-22',
-    body: 'This is the em..',
-  },
-  {
-    id: 4,
-    subject: 'Hello',
-    sender: 'sd@sd.com',
-    date: '2023-09-22',
-    body: 'This is the y...',
-  },
-  {
-    id: 3,
-    subject: 'Hello',
-    sender: 'sender@24.com',
-    date: '2023-09-22',
-    body: 'This is the sdgs...',
-  },
-];
 
 export default function Communication() {
   const [selectedEmail, setSelectedEmail] = useState(null);
@@ -184,23 +14,18 @@ export default function Communication() {
   };
 
 
-
   return (
     <div style={{ display: 'flex' }}>
-      <EmailList emails={emails} onItemClick={handleItemClick} />
+      <EmailList onItemClick={handleItemClick} />
       {selectedEmail && <EmailDetail email={selectedEmail} />}
     </div>
   );
 }
 
 
-const EmailList = ({ emails, onItemClick }) => {
+const EmailList = ({onItemClick }) => {
 
   const [emailClick, setEmailClicked] = useState()
-
-  // const handleEmailClick = () => {
-  //   setEmailClicked(!emailClick)
-  // }
 
   const columns = useMemo(
     () => [

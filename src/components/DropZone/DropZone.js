@@ -47,6 +47,7 @@ import {
       if (uploadedFiles.length === files.length) {
         setIsUploading(false);
         onAllUploaded(uploadedFiles);
+        console.log('yo');
         return;
       }
       if (!isUploading) setIsUploading(true);

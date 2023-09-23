@@ -3,6 +3,14 @@ import {
   MantineReactTable,
   useMantineReactTable,
 } from "mantine-react-table";
+
+import { Dialog, Group, TextInput, Textarea, Autocomplete } from "@mantine/core";
+import { useDisclosure } from '@mantine/hooks' 
+
+import { useSendEmail } from "api/hooks/communication";
+
+import SendEmail from "pages/communication/send-email/index";
+
 import {
   ActionIcon,
   Badge,
@@ -61,7 +69,6 @@ function TableInlineCRUD({
   const fetchedElements =  data?.data[dataName]?.data ?? [];
   const totalRowCount = data?.data[dataName]?.total ?? 0;
 
-
   useEffect(()=>{
     if(!setSelectdRow) return;
     const keys = Object.keys(rowSelection);
@@ -71,6 +78,8 @@ function TableInlineCRUD({
   }, [rowSelection]);
 
   const mutation = deleteMutate();
+
+  const [opened, { toggle, close }] = useDisclosure(false);
 
   //DELETE action
   const openDeleteConfirmModal = (row) =>
@@ -132,37 +141,12 @@ function TableInlineCRUD({
     manualPagination: true,
     manualSorting: true,
     enableEditing: true,
-    /*mantineToolbarAlertBannerProps: isError
-      ? {
-          color: "red",
-          children: "Error loading data",
-        }
-      : undefined,*/
+
     onColumnFilterFnsChange: setColumnFilterFns,
     onColumnFiltersChange: setColumnFilters,
     // onGlobalFilterChange: setGlobalFilter,
     onPaginationChange: setPagination,
     onSortingChange: setSorting,
-
-    /*renderRowActions: ({ row, table }) => (
-      <Flex gap="md" sx={{ width: "50px" }}>
-        <Tooltip label="Edit">
-          <ActionIcon onClick={() => table.setEditingRow(row)}>
-            <EditFilled style={{ fontSize: 18 }} />
-          </ActionIcon>
-        </Tooltip>
-        <Tooltip label="Delete">
-          <ActionIcon
-            color="red"
-            onClick={() => {
-              openDeleteConfirmModal(row);
-            }}
-          >
-            <DeleteFilled style={{ fontSize: 18 }} />
-          </ActionIcon>
-        </Tooltip>
-      </Flex>
-    ),*/
 
     renderEditRowModalContent: ({ row, table, internalEditComponents }) => (
       <>{/* //TODO */}</>
@@ -214,19 +198,22 @@ function TableInlineCRUD({
     ),
     renderTopToolbarCustomActions: ({ table }) => (
       <>
-        <Button
-          onClick={() => {
-            table.setCreatingRow(true); //simplest way to open the create row modal with no default values
-            //or you can pass in a row object to set default values with the `createRow` helper function
-            // table.setCreatingRow(
-            //   createRow(table, {
-            //     //optionally pass in default values for the new row, useful for nested data or other complex scenarios
-            //   }),
-            // );
-          }}
-        >
-          Create New {name}
+        
+        <Button onClick={toggle}>
+          Create New Email
         </Button>
+
+        <Dialog
+          position={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} 
+          opened={opened} 
+          withCloseButton 
+          onClose={close} 
+          size="xl" 
+          radius="md"
+        >
+          <SendEmail />
+        </Dialog>
+
         <Tooltip label="Refresh Data">
           <ActionIcon onClick={() => refetch()}>
             <IconRefresh />

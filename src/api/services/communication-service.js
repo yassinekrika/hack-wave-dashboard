@@ -10,6 +10,11 @@ class CommunicationService {
   deleteEmail(communicationId) {
     return instance.delete(`/dashboard/v1/communication/${communicationId}`);
   }
+
+  sendEmail(user) {
+    return instance.post(`/dashboard/v1/communication/compose`, user);
+  }
+  
 }
 
 const communicationService = new CommunicationService();

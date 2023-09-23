@@ -96,13 +96,6 @@ export function AddStudent() {
         <Tabs.Tab value="User Info" icon={<IconUserEdit size="0.8rem" />}>
           Student Info
         </Tabs.Tab>
-        <Tabs.Tab
-          disabled
-          value="User Roles"
-          icon={<IconSettingsPlus size="0.8rem" />}
-        >
-          Permisions
-        </Tabs.Tab>
       </Tabs.List>
 
       <Tabs.Panel value="User Info" pt="xs">
@@ -415,7 +408,7 @@ export function AddStudent() {
                   loading={formik.isSubmitting}
                   onClick={formik.submitForm}
                 >
-                  Submite
+                  Submit
                 </Button>
               </MainCard>
             </Stack>
@@ -423,9 +416,9 @@ export function AddStudent() {
         </Grid>
       </Tabs.Panel>
 
-      <Tabs.Panel value="Permisions" pt="xs">
-        Messages tab content
-      </Tabs.Panel>
+      {/*<Tabs.Panel value="Permisions" pt="xs">*/}
+      {/*</Tabs>  Messages tab content*/}
+      {/*</Tabs.Panel>*/}
     </Tabs>
   );
 }

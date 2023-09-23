@@ -3,32 +3,38 @@ import React from 'react'
 
 const TimeTable = () => {
 
-    const days = [0,1,2,3,4,5,6, 7]
-
+    const days = ['', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri']
     return (
         <div style={{display: 'flex'}}>
-            {days.map((day)=><SubjectEditor></SubjectEditor>)}
+            {days.map((day, index)=><SubjectEditor day={day} rwIdx={index}></SubjectEditor>)}
         </div>
     )
 }
 
-const DayEditor = ()=>{
+const DayEditor = ({children})=>{
     return (
-        <div style={{
-            width: 100,
-            height: 100,
-            backgroundColor: 'green',
-            margin: 5
-        }}>
+        <div className='day-editor'>
+            {children}
         </div>
     )
 }
 
-const SubjectEditor = ()=>{
-    const hours = [0,1,2,3,4,5,6]
+const SubjectEditor = ({day, rwIdx})=>{
+    const hours = ['', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00']
     return (
         <div>
-            {hours.map((hour)=><DayEditor></DayEditor>)}
+            {hours.map((hour, index)=>{
+                if(rwIdx != 0) {
+                    return index ? <DayEditor></DayEditor> : <div style={{textAlign: 'center', fontWeight: 'bold'}}>{day}</div>
+                }else{
+                    return  index ? <div style={{textAlign: 'center', fontWeight: 'bold',
+                    height: '120px',
+                    aspectRatio: 1.5,
+                    margin: 2,
+                display: 'grid',
+            placeItems: 'center'}}>{hour}</div> : <div style={{textAlign: 'center', height: '22px'}}></div>
+                }
+            })}
         </div>
     )
 }

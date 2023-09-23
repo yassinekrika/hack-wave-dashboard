@@ -13,7 +13,7 @@ const timeTable = {
     children: [
         {
             id: "time",
-            title: "Schadule",
+            title: "Schedule",
             type: "item",
             url: "/time-table",
             icon: icons.UserOutlined

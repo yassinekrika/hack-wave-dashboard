@@ -12,7 +12,7 @@ const communication = {
     children: [
         {
             id: "communication",
-            title: "Email Communication",
+            title: "Email",
             type: "item",
             url: "/communication",
             icon: icons.UserOutlined

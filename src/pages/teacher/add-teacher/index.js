@@ -93,14 +93,7 @@ export function AddTeacher() {
     <Tabs color="green" variant="outline" defaultValue="User Info">
       <Tabs.List position="center">
         <Tabs.Tab value="User Info" icon={<IconUserEdit size="0.8rem" />}>
-          Student Info
-        </Tabs.Tab>
-        <Tabs.Tab
-          disabled
-          value="User Roles"
-          icon={<IconSettingsPlus size="0.8rem" />}
-        >
-          Permisions
+          Teacher Info
         </Tabs.Tab>
       </Tabs.List>
 
@@ -407,7 +400,7 @@ export function AddTeacher() {
                   loading={formik.isSubmitting}
                   onClick={formik.submitForm}
                 >
-                  Submite
+                  Submit
                 </Button>
               </MainCard>
             </Stack>
@@ -415,9 +408,9 @@ export function AddTeacher() {
         </Grid>
       </Tabs.Panel>
 
-      <Tabs.Panel value="Permisions" pt="xs">
-        Messages tab content
-      </Tabs.Panel>
+      {/*<Tabs.Panel value="Permisions" pt="xs">*/}
+      {/*</Tabs>  Messages tab content*/}
+      {/*</Tabs.Panel>*/}
     </Tabs>
   );
 }

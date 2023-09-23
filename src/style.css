@@ -46,3 +46,13 @@
     height: 150px;
     background-color: black;margin: 10px;
 }
+.day-editor {
+    height: 120px;
+    aspect-ratio: 1.5;
+    border: 1px solid cadetblue;
+    margin: 2px;
+    border-radius: 8px;
+}
+.day-editor:hover {
+    background-color: #ffbdbe81;
+}

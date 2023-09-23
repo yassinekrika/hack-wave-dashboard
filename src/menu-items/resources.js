@@ -13,7 +13,7 @@ const resources = {
     children: [
         {
             id: "resources",
-            title: "Coures",
+            title: "Courses",
             type: "item",
             url: "/resources",
             icon: icons.UserOutlined

@@ -13,7 +13,7 @@ const student = {
     children: [
         {
             id: "users",
-            title: "Student",
+            title: "Students",
             type: "item",
             url: "/student",
             icon: icons.UserOutlined

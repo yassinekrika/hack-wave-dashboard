@@ -21,6 +21,20 @@ function useDeleteEmailMutation() {
         }
       },
     });
-  }
+}
 
-export {useGetEmails, useDeleteEmailMutation }
+const useSendEmail = () => {
+  const queryClient = useQueryClient();
+  return useMutation(
+    (user) => {
+      return CommunicationService.sendEmail(user);
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["users"]);
+      },
+    }
+  );
+};
+
+export {useGetEmails, useDeleteEmailMutation, useSendEmail }
